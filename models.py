@@ -20,7 +20,7 @@ def get_adf_test_results(series):
     return adf_stat, p_value, is_stationary
 
 
-def get_arima_forecast(series, order=(2, 1, 2), steps=12):
+def get_arima_forecast(series, order=(2, 1, 2), steps=12, alpha=0.05):
     """
     Fits an ARIMA model and returns the forecast, confidence
     intervals, and AIC.
@@ -28,7 +28,7 @@ def get_arima_forecast(series, order=(2, 1, 2), steps=12):
     fitted = ARIMA(series, order=order).fit()
     fc = fitted.get_forecast(steps=steps)
     fc_mean = fc.predicted_mean
-    fc_ci = fc.conf_int()
+    fc_ci = fc.conf_int(alpha=alpha)
     return fitted, fc_mean, fc_ci
 
 
@@ -142,3 +142,28 @@ def get_seasonal_decomposition(series, period=12):
 
     res = seasonal_decompose(series.dropna(), period=period)
     return res.trend, res.seasonal, res.resid
+
+
+def get_rolling_statistics(series, window=12):
+    """Calculate rolling mean and standard deviation."""
+    rolling_mean = series.rolling(window=window).mean()
+    rolling_std = series.rolling(window=window).std()
+    return rolling_mean, rolling_std
+
+
+def get_anomalies(series, threshold_z=2.5):
+    """Detect anomalies using Z-score."""
+    import numpy as np
+
+    mean = series.mean()
+    std = series.std()
+    z_scores = (series - mean) / std
+    anomalies = series[np.abs(z_scores) > threshold_z]
+    return anomalies
+
+
+def get_growth_rates(series):
+    """Calculate Month-over-Month and Year-over-Year growth rates."""
+    mom = series.pct_change(1) * 100
+    yoy = series.pct_change(12) * 100
+    return mom, yoy
