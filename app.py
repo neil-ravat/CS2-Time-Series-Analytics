@@ -257,7 +257,7 @@ if section == "1. EDA Overview":
     # Add CS2 release markers
     for i in range(1, 4):
         fig.add_vline(
-            x="2023-09-01",
+            x=pd.to_datetime("2023-09-01").timestamp() * 1000,
             line_width=1,
             line_dash="dash",
             line_color="#ff7b72",
@@ -766,14 +766,14 @@ elif section == "5. GARCH Volatility":
         )
     )
     fig.add_vline(
-        x="2020-03-01",
+        x=pd.to_datetime("2020-03-01").timestamp() * 1000,
         line_width=1,
         line_dash="dash",
         line_color="#8b949e",
         annotation_text="COVID-19",
     )
     fig.add_vline(
-        x="2023-09-01",
+        x=pd.to_datetime("2023-09-01").timestamp() * 1000,
         line_width=1,
         line_dash="dash",
         line_color="#8b949e",
