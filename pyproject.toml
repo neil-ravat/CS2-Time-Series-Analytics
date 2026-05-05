@@ -1,0 +1,10 @@
+[tool.pyrefly]
+# Project root for resolving local modules (models, data_loader)
+search_path = ["."]
+
+# Exclude virtual environment from type checking
+exclude = ["venv"]
+
+[tool.pyrefly.errors]
+# Suppress false-positive "could not find name" from snippet analysis
+missing-module-source = false

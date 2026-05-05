@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+plotly
+statsmodels
+arch
+pytest>=8.0.0
+pytest-cov
+flake8
+black
+pyyaml>=6.0

@@ -1,0 +1,16 @@
+data:
+  file_path: "Players - Sheet1.csv"
+models:
+  arima:
+    order: [2, 1, 2]
+    steps: 12
+  var:
+    maxlags: 12
+    steps: 12
+  cross_correlation:
+    max_lags: 12
+  garch:
+    p: 1
+    q: 1
+  acf_pacf:
+    nlags: 20
