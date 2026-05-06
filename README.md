@@ -9,6 +9,10 @@ A professional, modular time series analysis application exploring the Counter-S
 
 Designed entirely within a custom **CS2 Tactical Theme** (featuring CT Blue, T Gold, and Gunmetal Glassmorphism), this dashboard provides production-grade analytics suitable for game publishers, esports organizations, and strategic forecasting.
 
+### 🌐 [Live Dashboard Demo](https://cs2-tsa.streamlit.app)
+*(Deployed on Streamlit Cloud)*
+
+
 ---
 
 ## 🏛️ Project Architecture
@@ -41,6 +45,36 @@ We deploy a full stack of financial-grade econometric models to evaluate the CS2
 - **Z-Score Anomaly Detection**: Algorithmically identifies sudden, unnatural spikes in the player base (e.g., global lockdowns or the CS2 beta launch).
 
 ---
+
+## 🖼️ Visual Evidence & Results
+
+### 1. Exploratory Data Analysis (EDA) Overview
+![EDA Overview](assets/screenshots/eda_overview.png)
+*Initial visualization of raw data across Players, Trends, and Twitch Viewership.*
+
+### 2. Stationarity & Differencing
+![Differenced Series](assets/screenshots/differenced_series.png)
+*Visual confirmation of the first-differenced series achieving stationarity.*
+
+### 3. ARIMA Univariate Forecasting
+![ARIMA Forecast](assets/screenshots/arima_forecast.png)
+*Projection of concurrent player counts with 95% confidence intervals.*
+
+### 4. Multivariate VAR Forecasting
+![VAR Forecast](assets/screenshots/var_forecast.png)
+*Simultaneous forecasting of all system variables accounting for cross-impact.*
+
+### 5. GARCH Volatility Modeling
+![GARCH Volatility](assets/screenshots/garch_volatility.png)
+*Estimation of conditional variance and volatility clustering post-launch.*
+
+### 6. Model Diagnostics (ACF/PACF & Residuals)
+![ACF/PACF](assets/screenshots/acf_pacf.png)
+![Residuals](assets/screenshots/residuals.png)
+*Rigorous validation of model residuals to ensure zero autocorrelation.*
+
+---
+
 
 ## 🚀 Key Findings & Predictive Insights
 
