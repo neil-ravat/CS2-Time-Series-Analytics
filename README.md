@@ -46,32 +46,25 @@ We deploy a full stack of financial-grade econometric models to evaluate the CS2
 
 ---
 
-## 🖼️ Visual Evidence & Results
+## 🖥️ Dashboard Preview
 
-### 1. Exploratory Data Analysis (EDA) Overview
-![EDA Overview](assets/screenshots/eda_overview.png)
-*Initial visualization of raw data across Players, Trends, and Twitch Viewership.*
+| **EDA Overview** | **ARIMA Forecasting** |
+| :---: | :---: |
+| ![EDA Overview](assets/screenshots/eda_overview.png) | ![ARIMA Forecast](assets/screenshots/arima_forecast.png) |
+| **Multivariate VAR** | **GARCH Volatility** |
+| ![VAR Forecast](assets/screenshots/var_forecast.png) | ![GARCH Volatility](assets/screenshots/garch_volatility.png) |
 
-### 2. Stationarity & Differencing
-![Differenced Series](assets/screenshots/differenced_series.png)
-*Visual confirmation of the first-differenced series achieving stationarity.*
+---
 
-### 3. ARIMA Univariate Forecasting
-![ARIMA Forecast](assets/screenshots/arima_forecast.png)
-*Projection of concurrent player counts with 95% confidence intervals.*
+## 🖼️ Statistical Evidence & Diagnostics
 
-### 4. Multivariate VAR Forecasting
-![VAR Forecast](assets/screenshots/var_forecast.png)
-*Simultaneous forecasting of all system variables accounting for cross-impact.*
+Beyond the main forecasts, the dashboard provides deep-dive statistical validation:
 
-### 5. GARCH Volatility Modeling
-![GARCH Volatility](assets/screenshots/garch_volatility.png)
-*Estimation of conditional variance and volatility clustering post-launch.*
-
-### 6. Model Diagnostics (ACF/PACF & Residuals)
-![ACF/PACF](assets/screenshots/acf_pacf.png)
-![Residuals](assets/screenshots/residuals.png)
-*Rigorous validation of model residuals to ensure zero autocorrelation.*
+- **Stationarity & Differencing**: Visual confirmation of the first-differenced series achieving stationarity.
+  ![Differenced Series](assets/screenshots/differenced_series.png)
+- **Model Diagnostics**: Rigorous validation of model residuals (ACF/PACF) to ensure white noise behavior.
+  ![ACF/PACF](assets/screenshots/acf_pacf.png)
+  ![Residuals](assets/screenshots/residuals.png)
 
 ---
 

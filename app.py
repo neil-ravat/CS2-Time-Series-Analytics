@@ -27,11 +27,6 @@ CS2_T_GOLD = "#E5A823"
 CS2_GUNMETAL = "#121418"
 CS2_WARNING = "#ff7b72"
 
-# Plotly Theme Settings
-PLOT_BG = "rgba(0,0,0,0)"
-PAPER_BG = "rgba(0,0,0,0)"
-GRID_COLOR = "#1f2329"
-TEXT_COLOR = "#c9d1d9"
 
 # ── HACKING STREAMLIT: SaaS Mode CSS ──
 st.markdown(
