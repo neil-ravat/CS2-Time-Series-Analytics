@@ -9,7 +9,7 @@ A professional, modular time series analysis application exploring the Counter-S
 
 Designed entirely within a custom **CS2 Tactical Theme** (featuring CT Blue, T Gold, and Gunmetal Glassmorphism), this dashboard provides production-grade analytics suitable for game publishers, esports organizations, and strategic forecasting.
 
-### 🌐 [Live Dashboard Demo](https://cs2-tsa.streamlit.app)
+### 🌐 [Live Dashboard Demo](https://cs2-time-series-analytics-eycwsquq98icgfrmn8puq2.streamlit.app/)
 *(Deployed on Streamlit Cloud)*
 
 
