@@ -96,8 +96,8 @@ The dashboard features an interactive simulation environment for testing model a
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/CS2-Time-Series.git
-   cd CS2-Time-Series
+   git clone https://github.com/neil-ravat/CS2-Time-Series-Analytics.git
+   cd CS2-Time-Series-Analytics
    ```
 
 2. **Set up a virtual environment**
