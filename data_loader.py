@@ -5,13 +5,19 @@ from pathlib import Path
 
 
 @st.cache_data
-def load_data():
+def load_data(file_path=None):
     """
     Load and preprocess the CS2 Time Series dataset.
     Caches the result using Streamlit to avoid redundant disk I/O.
     """
-    base_path = Path(__file__).parent
-    file_path = base_path / "Players - Sheet1.csv"
+    if file_path is None:
+        base_path = Path(__file__).parent
+        file_path = base_path / "Players - Sheet1.csv"
+    else:
+        file_path = Path(file_path)
+
+    if not file_path.exists():
+        raise FileNotFoundError(f"File not found: {file_path}")
 
     df = pd.read_csv(file_path)
     df.columns = ["Month", "Players", "Date", "Trends", "Twitch"]

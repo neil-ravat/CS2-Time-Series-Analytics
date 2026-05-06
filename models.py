@@ -167,3 +167,39 @@ def get_growth_rates(series):
     mom = series.pct_change(1) * 100
     yoy = series.pct_change(12) * 100
     return mom, yoy
+
+
+def detect_anomalies(series: pd.Series, threshold: float = 3.0) -> pd.Series:
+    """
+    Detect anomalies in a time series using Z-scores.
+
+    Args:
+        series: The time series data.
+        threshold: The Z-score threshold for anomaly detection.
+
+    Returns:
+        A boolean series where True indicates an anomaly.
+    """
+    z_scores = (series - series.mean()) / series.std()
+    return z_scores.abs() > threshold
+
+
+def granger_causality_test(
+    data: pd.DataFrame, target: str, source: str, max_lag: int = 12
+) -> pd.DataFrame:
+    """
+    Perform Granger Causality test to see if 'source' predicts 'target'.
+    """
+    from statsmodels.tsa.stattools import grangercausalitytests
+
+    test_result = grangercausalitytests(
+        data[[target, source]], maxlag=max_lag, verbose=False
+    )
+
+    p_values = []
+    for lag in range(1, max_lag + 1):
+        # We use the SSR-based F-test p-value
+        p_val = test_result[lag][0]["ssr_ftest"][1]
+        p_values.append({"Lag": lag, "p_value": p_val})
+
+    return pd.DataFrame(p_values)
