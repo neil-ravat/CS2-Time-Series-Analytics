@@ -45,7 +45,10 @@ def get_adf_test_results(series: pd.Series) -> Tuple[float, float, bool]:
 
 
 def get_arima_forecast(
-    series: pd.Series, order: Tuple[int, int, int] = (2, 1, 2), steps: int = 12, alpha: float = 0.05
+    series: pd.Series,
+    order: Tuple[int, int, int] = (2, 1, 2),
+    steps: int = 12,
+    alpha: float = 0.05,
 ) -> Tuple[Any, pd.Series, pd.DataFrame]:
     """
     Fits an ARIMA model and returns the forecast, confidence
@@ -97,7 +100,9 @@ def get_granger_causality(data: pd.DataFrame, maxlag: int) -> pd.DataFrame:
     return pd.DataFrame(rows, columns=["Lag", "F-stat", "p-value", "Signal"])
 
 
-def get_garch_volatility(series: pd.Series, p: int = 1, q: int = 1) -> Tuple[pd.Series, pd.Series]:
+def get_garch_volatility(
+    series: pd.Series, p: int = 1, q: int = 1
+) -> Tuple[pd.Series, pd.Series]:
     """
     Fits a GARCH(p,q) model and returns the conditional volatility
     and model parameters. Assumes series is typically stationary.
@@ -109,7 +114,9 @@ def get_garch_volatility(series: pd.Series, p: int = 1, q: int = 1) -> Tuple[pd.
     return vol, prm
 
 
-def get_cross_correlation(series_x: pd.Series, series_y: pd.Series, max_lags: int = 12) -> pd.DataFrame:
+def get_cross_correlation(
+    series_x: pd.Series, series_y: pd.Series, max_lags: int = 12
+) -> pd.DataFrame:
     """
     Compute cross-correlation between two time series at specified lags.
     """
@@ -127,7 +134,9 @@ def get_cross_correlation(series_x: pd.Series, series_y: pd.Series, max_lags: in
     return pd.DataFrame({"Lag": lags, "Correlation": corrs})
 
 
-def compute_forecast_metrics(actual: pd.Series, predicted: pd.Series) -> Dict[str, float]:
+def compute_forecast_metrics(
+    actual: pd.Series, predicted: pd.Series
+) -> Dict[str, float]:
     """
     Calculate MAE, RMSE, and MAPE for forecast evaluation.
     """
@@ -157,7 +166,9 @@ def get_acf_pacf_values(
     return acf_vals, acf_confint, pacf_vals, pacf_confint
 
 
-def get_seasonal_decomposition(series: pd.Series, period: int = 12) -> Tuple[pd.Series, pd.Series, pd.Series]:
+def get_seasonal_decomposition(
+    series: pd.Series, period: int = 12
+) -> Tuple[pd.Series, pd.Series, pd.Series]:
     """
     Perform seasonal decomposition (trend, seasonal, residual).
     """
@@ -165,7 +176,9 @@ def get_seasonal_decomposition(series: pd.Series, period: int = 12) -> Tuple[pd.
     return res.trend, res.seasonal, res.resid
 
 
-def get_rolling_statistics(series: pd.Series, window: int = 12) -> Tuple[pd.Series, pd.Series]:
+def get_rolling_statistics(
+    series: pd.Series, window: int = 12
+) -> Tuple[pd.Series, pd.Series]:
     """Calculate rolling mean and standard deviation."""
     rolling_mean = series.rolling(window=window).mean()
     rolling_std = series.rolling(window=window).std()
